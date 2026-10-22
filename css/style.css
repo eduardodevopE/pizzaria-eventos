@@ -1,0 +1,59 @@
+:root{--tomate:#c8372d;--tomate-esc:#9f2a22;--manjericao:#2f5d3a;--mussarela:#f2d98b;--farinha:#fffdf8;--borda:#d9d1c1;--texto:#2a2522}
+*{box-sizing:border-box}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--texto);background:var(--farinha);line-height:1.55}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.15;margin:0 0 .5em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tomate);outline-offset:2px}
+
+/* faixa de toalha xadrez: o detalhe marcante do site */
+.toalha{height:20px;background:repeating-conic-gradient(var(--tomate) 0% 25%,#fff 0% 50%) 50%/20px 20px}
+
+.topo{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 5vw}
+.logo{font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:1.4rem;text-decoration:none;color:var(--tomate)}
+.topo nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;border:2px solid var(--tomate);border-radius:6px;padding:9px 18px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;background:var(--tomate);color:#fff}
+.btn:hover{background:var(--tomate-esc);border-color:var(--tomate-esc)}
+.btn.contorno{background:transparent;color:var(--tomate)}
+.btn.contorno:hover{background:var(--tomate);color:#fff}
+.btn.claro{background:var(--mussarela);border-color:var(--mussarela);color:var(--texto)}
+.btn.pequeno{padding:5px 12px;font-size:.9rem}
+
+.hero{background:var(--manjericao);color:var(--farinha);padding:10vh 5vw}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);max-width:15ch}
+.hero p{max-width:48ch;font-size:1.15rem;margin-bottom:1.5em}
+.hero .btn.contorno{color:var(--farinha);border-color:var(--farinha)}
+.hero .btn.contorno:hover{background:var(--farinha);color:var(--manjericao)}
+
+section{padding:48px 5vw}
+section h2{font-size:clamp(1.6rem,3.5vw,2.4rem)}
+.cardapio{list-style:none;padding:0;margin:0;max-width:680px}
+.cardapio li{display:flex;align-items:baseline;gap:8px;padding:9px 0}
+.cardapio .pt{flex:1;border-bottom:2px dotted var(--borda)}
+.cardapio small{display:block;color:#6b625a}
+.cardapio strong{white-space:nowrap}
+.eventos{background:#f6efe0}
+.eventos dl{max-width:680px;margin:0}
+.eventos dt{font-weight:700;margin-top:1em}
+.eventos dd{margin:0}
+footer{padding:28px 5vw;background:var(--texto);color:var(--farinha)}
+
+/* login, cadastro e formularios */
+.caixa{max-width:430px;margin:6vh auto;padding:28px;border:2px solid var(--borda);border-radius:10px}
+label{display:block;margin-top:14px;font-weight:700}
+input,select,textarea{width:100%;margin-top:4px;padding:10px;border:2px solid var(--borda);border-radius:6px;font:inherit;background:#fff}
+.caixa .btn,form .btn{margin-top:18px}
+.erro{color:var(--tomate-esc);font-weight:700;min-height:1.4em;margin:10px 0 0}
+.ok{color:var(--manjericao);font-weight:700}
+
+/* tela principal */
+.grade{display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:start}
+.carrinho{border:2px solid var(--borda);border-radius:10px;padding:20px;position:sticky;top:12px}
+.carrinho ul{list-style:none;padding:0;margin:0 0 12px}
+.carrinho li{display:flex;justify-content:space-between;gap:8px;padding:5px 0}
+.total{font-weight:700;font-size:1.2rem}
+.lista{list-style:none;padding:0;margin:0;max-width:680px}
+.lista li{padding:10px 0;border-bottom:1px solid var(--borda)}
+.vazio{color:#6b625a}
+form.reserva{max-width:480px}
+@media (max-width:800px){.grade{grid-template-columns:1fr}.carrinho{position:static}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
