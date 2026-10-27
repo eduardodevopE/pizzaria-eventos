@@ -1,0 +1,48 @@
+name: CI - Validação do Código
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validar:
+    name: Validar projeto
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivos essenciais
+        run: |
+          echo "Verificando estrutura do projeto..."
+          if [ ! -f index.html ]; then
+            echo "::error::index.html não encontrado na raiz do projeto!"
+            exit 1
+          fi
+          echo "Estrutura OK."
+
+      - name: Validar arquivos HTML
+        run: |
+          if find . -name "*.html" -not -path "./node_modules/*" | grep -q .; then
+            npx --yes htmlhint "**/*.html" --ignore "node_modules/**"
+          else
+            echo "Nenhum arquivo HTML encontrado para validar."
+          fi
+
+      - name: Configurar Node.js (se existir package.json)
+        if: hashFiles('package.json') != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        if: hashFiles('package.json') != ''
+        run: npm ci
+
+      - name: Rodar lint/testes (se configurados no package.json)
+        if: hashFiles('package.json') != ''
+        run: |
+          npm run lint --if-present
+          npm test --if-present
