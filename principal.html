@@ -1,69 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu painel | Pizzaria e Eventos</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Lucão</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d0d0d;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #39ff14;
+      font-size: 3rem;
+      text-shadow: 0 0 10px #39ff14;
+    }
+  </style>
 </head>
-<body data-pagina="principal">
-  <header class="topo">
-    <a class="logo" href="principal.html">Pizzaria e Eventos</a>
-    <nav>
-      <span id="ola"></span>
-      <a href="#pedido">Pedir pizza</a>
-      <a href="#evento">Reservar evento</a>
-      <a href="#historico">Meus pedidos</a>
-      <button id="sair" class="btn contorno pequeno" type="button">Sair</button>
-    </nav>
-  </header>
-  <div class="toalha" aria-hidden="true"></div>
-
-  <main>
-    <section id="pedido">
-      <h2>Cardápio</h2>
-      <div class="grade">
-        <ul id="lista-cardapio" class="cardapio"></ul>
-        <aside class="carrinho" aria-label="Carrinho">
-          <h3>Seu pedido</h3>
-          <ul id="itens-carrinho"></ul>
-          <p class="total">Total: <span id="total">R$ 0,00</span></p>
-          <button id="finalizar" class="btn" type="button" disabled>Finalizar pedido</button>
-        </aside>
-      </div>
-    </section>
-
-    <section id="evento">
-      <h2>Reservar evento</h2>
-      <form id="form-reserva" class="reserva">
-        <label for="data">Data do evento</label>
-        <input id="data" name="data" type="date" required>
-        <label for="convidados">Número de convidados</label>
-        <input id="convidados" name="convidados" type="number" min="5" max="120" value="20" required>
-        <label for="pacote">Pacote</label>
-        <select id="pacote" name="pacote">
-          <option>Aniversário</option>
-          <option>Confraternização</option>
-          <option>Rodízio de festa</option>
-        </select>
-        <label for="obs">Observações (opcional)</label>
-        <textarea id="obs" name="obs" rows="3"></textarea>
-        <p id="msg-reserva" role="alert"></p>
-        <button class="btn" type="submit">Enviar reserva</button>
-      </form>
-    </section>
-
-    <section id="historico">
-      <h2>Meus pedidos</h2>
-      <ul id="meus-pedidos" class="lista"></ul>
-      <h2 style="margin-top:32px">Minhas reservas</h2>
-      <ul id="minhas-reservas" class="lista"></ul>
-    </section>
-  </main>
-
-  <script src="../js/main.js"></script>
-  <script src="../js/principal.js"></script>
+<body>
+  <h1>LUCÃO IS LISTENING</h1>
 </body>
 </html>
